@@ -4,40 +4,48 @@ pipeline{
         stage("Clone the code"){
             steps{
                 script {
-                    """
-                     echo "Clone the code"
-                    """
+                    echo "Clone the code"
                 }
             }
         }
         
         stage("Install the dependiances"){
             steps{
-                echo "Install dependiances"
+                script{
+                    echo "Install dependiances"
+                }
             }
         }
 
         stage("Scanning the code"){
             steps{
-                echo "Scan the code"
+                script{
+                    echo "Scan the code"
+                }
             }
         }
 
         stage("Testing the code") {
             steps{
-                echo "Test the code"
+                script{
+                    echo "Test the code"
+                }
             }
         }
         
         stage("Build the Image"){
             steps{
-                echo "Build image"
+                script{
+                    echo "Build image"
+                }
             }
         }
         
         stage("Deploy the Image"){
             steps{
-                echo "Deploy image"
+                script{
+                    echo "Deploy image"
+                }
             }
         }
     }
