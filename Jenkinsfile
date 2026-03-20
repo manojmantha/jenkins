@@ -51,12 +51,11 @@ pipeline{
             }
         }
     }
-    
 
     post{
         always {
             echo "I always shows either success or failure"
-            // deleteDir()
+            deleteDir()
         }
         success{
             echo "I am from success pipeline"
