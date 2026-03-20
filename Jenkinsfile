@@ -32,7 +32,7 @@ pipeline{
         }
         
         stage("Deploy the Image"){
-            steps{
+            stepss{
                 echo "Deploy image"
             }
         }
