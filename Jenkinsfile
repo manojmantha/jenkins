@@ -42,5 +42,8 @@ pipeline{
         always {
             echo "I always shows either success or failure"
         }
+        success{
+            echo "I am from success pipeline"
+        }
     }
 }
