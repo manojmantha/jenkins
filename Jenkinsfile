@@ -45,5 +45,8 @@ pipeline{
         success{
             echo "I am from success pipeline"
         }
+        failure{
+            echo "I am from failure pipeline"
+        }
     }
 }
