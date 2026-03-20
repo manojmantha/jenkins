@@ -3,7 +3,11 @@ pipeline{
     stages{
         stage("Clone the code"){
             steps{
-                echo "Clone the code"
+                script {
+                    """
+                     echo "Clone the code"
+                    """
+                }
             }
         }
         
