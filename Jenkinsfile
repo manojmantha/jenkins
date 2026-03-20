@@ -41,6 +41,7 @@ pipeline{
     post{
         always {
             echo "I always shows either success or failure"
+            deleteDir()
         }
         success{
             echo "I am from success pipeline"
