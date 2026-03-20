@@ -2,6 +2,13 @@ pipeline{
     agent {
         label 'AGENT-1'
     }
+    environment { 
+        COURSE = 'jenkins'
+    }
+    options {
+        timeout(time: 30, unit: 'MINUTES') 
+        disableConcurrentBuilds()
+    }
     stages{
         stage("Clone the code"){
             steps{
