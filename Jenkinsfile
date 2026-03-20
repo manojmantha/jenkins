@@ -2,6 +2,8 @@ pipeline{
     agent {
         label 'AGENT-1'
     }
+
+    // Pre-Build
     environment { 
         COURSE = 'jenkins'
     }
@@ -9,6 +11,15 @@ pipeline{
         timeout(time: 30, unit: 'MINUTES') 
         disableConcurrentBuilds()
     }
+     parameters {
+        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+        text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
+        booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+        choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password') 
+    }
+
+    // Build
     stages{
         stage("Clone the code"){
             steps{
@@ -59,6 +70,7 @@ pipeline{
         }
     }
 
+    // Post-build
     post{
         always {
             echo "I always shows either success or failure"
