@@ -24,7 +24,11 @@ pipeline{
         stage("Clone the code"){
             steps{
                 script {
-                    echo "Clone the code"
+                    sh """
+                        echo "Hello Clone the code"
+                        env
+                        echo "I am ${params.PERSON}"
+                    """
                 }
             }
         }
